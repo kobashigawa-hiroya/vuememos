@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <ul>
+      <li v-for="memo in memos" :key="memo.id">
+        {{ memo.title }}: {{ memo.description }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -9,8 +13,11 @@ import axios from 'axios';
 export default {
   data: function () {
     return {
-      message: "Hello Vue!"
+      memos: "memos"
     }
+  },
+  mounted() {
+    this.setMemo();
   },
   methods: {
       setMemo: function () {
