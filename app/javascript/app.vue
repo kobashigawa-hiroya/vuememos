@@ -1,15 +1,15 @@
 <template>
   <div id="app">
+    <div>
+      <input v-model="title" placeholder="title">
+      <input v-model="description" placeholder="description">
+      <button @click="addMemo">追加</button>
+    </div>
     <ul>
       <li v-for="memo in memos" :key="memo.id">
         {{ memo.title }}: {{ memo.description }}
       </li>
     </ul>
-    <div>
-      <input v-model="title" placeholder="title">
-      <input v-model="description" placeholder="description">
-      <button v-on:click="addMemo">追加</button>
-    </div>
   </div>
 </template>
 
@@ -33,6 +33,15 @@ export default {
           this.memos = response.data
         ))
 
+      },
+      addMemo: function() {
+        axios.post('/api/memos',{
+          title:this.title,
+          description: this.description
+        })
+        .then(response =>(
+          this.setMemo()
+        ));
       }
     }
   }
