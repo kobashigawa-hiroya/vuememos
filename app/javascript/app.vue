@@ -8,6 +8,7 @@
     <div>
       <input v-model="title" placeholder="title">
       <input v-model="description" placeholder="description">
+      <button v-on:click="addMemo">追加</button>
     </div>
   </div>
 </template>
