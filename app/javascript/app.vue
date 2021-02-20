@@ -47,9 +47,48 @@ export default {
   }
 </script>
 
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+<style lange="scss" scoped>
+.form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 32px;
+   &-group {
+     margin-bottom: 1rem;
+   }
+   &-control {
+     width: 600px;
+     min-height: 24px;
+     font-size: 1rem;
+     border: 1px solid #ced4da;
+     padding: 4px 8px;
+   }
+  }
+
+  button {
+    width: 200px;
+  }
+
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    color:#fff;
+    background-color: black;
+    width: 238px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin: 16px;
+    &-body {
+      padding: 1.25rem;
+    }
+    &-title {
+      margin-bottom: .75rem;
+      font-weight: 600;
+    }
+  }
 </style>
